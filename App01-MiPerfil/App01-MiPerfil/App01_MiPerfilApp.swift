@@ -11,7 +11,7 @@ import SwiftUI
 struct App01_MiPerfilApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }

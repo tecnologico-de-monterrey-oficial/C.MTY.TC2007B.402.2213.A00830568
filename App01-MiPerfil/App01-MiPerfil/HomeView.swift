@@ -9,12 +9,20 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack{
+            Color.blue
+            VStack{
+                Text("Hello, world!")
+                    .padding([.top, .leading, .bottom, .trailing], 50)
+                    .foregroundColor(Color.white)
+                    .font(.system(.largeTitle))
+            }
+        }
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }

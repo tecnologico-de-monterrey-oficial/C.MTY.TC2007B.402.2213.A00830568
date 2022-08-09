@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6DD365FA28A17E3400092EE7 /* App01_MiPerfilApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD365F928A17E3400092EE7 /* App01_MiPerfilApp.swift */; };
-		6DD365FC28A17E3400092EE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD365FB28A17E3400092EE7 /* ContentView.swift */; };
+		6DD365FC28A17E3400092EE7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD365FB28A17E3400092EE7 /* HomeView.swift */; };
 		6DD365FE28A17E3D00092EE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD365FD28A17E3D00092EE7 /* Assets.xcassets */; };
 		6DD3660128A17E3D00092EE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD3660028A17E3D00092EE7 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		6DD365F628A17E3400092EE7 /* App01-MiPerfil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App01-MiPerfil.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD365F928A17E3400092EE7 /* App01_MiPerfilApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App01_MiPerfilApp.swift; sourceTree = "<group>"; };
-		6DD365FB28A17E3400092EE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6DD365FB28A17E3400092EE7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6DD365FD28A17E3D00092EE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DD3660028A17E3D00092EE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				6DD365F928A17E3400092EE7 /* App01_MiPerfilApp.swift */,
-				6DD365FB28A17E3400092EE7 /* ContentView.swift */,
+				6DD365FB28A17E3400092EE7 /* HomeView.swift */,
 				6DD365FD28A17E3D00092EE7 /* Assets.xcassets */,
 				6DD365FF28A17E3D00092EE7 /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DD365FC28A17E3400092EE7 /* ContentView.swift in Sources */,
+				6DD365FC28A17E3400092EE7 /* HomeView.swift in Sources */,
 				6DD365FA28A17E3400092EE7 /* App01_MiPerfilApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
