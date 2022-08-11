@@ -64,7 +64,7 @@ struct HomeView: View {
                     VStack{
                         VStack{
                             TextView(label: "Carrera: ", value: program)
-                            TextView(label: "Edad: ", value: "\(age)")
+                            TextView(label: "Edad: ", value: String (format: "%0.f", age))
                             TextView(label: "Fecha de Nacimiento: ", value: "\(dateFormat.string(from: dob))")
                             TextView(label: "Ciudad: ", value: city)
                         }
