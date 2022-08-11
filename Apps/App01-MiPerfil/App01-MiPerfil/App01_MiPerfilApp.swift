@@ -2,7 +2,7 @@
 //  App01_MiPerfilApp.swift
 //  App01-MiPerfil
 //
-//  Created by Edgar Alexandro on 08/08/22.
+//  Created by Edgar Alexandro on 11/08/22.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct App01_MiPerfilApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            ContentView()
         }
     }
 }

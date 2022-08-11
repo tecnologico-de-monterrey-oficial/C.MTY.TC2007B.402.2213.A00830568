@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6DD365FA28A17E3400092EE7 /* App01_MiPerfilApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD365F928A17E3400092EE7 /* App01_MiPerfilApp.swift */; };
-		6DD365FC28A17E3400092EE7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD365FB28A17E3400092EE7 /* HomeView.swift */; };
-		6DD365FE28A17E3D00092EE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD365FD28A17E3D00092EE7 /* Assets.xcassets */; };
-		6DD3660128A17E3D00092EE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD3660028A17E3D00092EE7 /* Preview Assets.xcassets */; };
+		6DEB99F228A56BD5001B37FF /* App01_MiPerfilApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB99F128A56BD5001B37FF /* App01_MiPerfilApp.swift */; };
+		6DEB99F428A56BD5001B37FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB99F328A56BD5001B37FF /* ContentView.swift */; };
+		6DEB99F628A56BD9001B37FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DEB99F528A56BD9001B37FF /* Assets.xcassets */; };
+		6DEB99F928A56BD9001B37FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DEB99F828A56BD9001B37FF /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6DD365F628A17E3400092EE7 /* App01-MiPerfil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App01-MiPerfil.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DD365F928A17E3400092EE7 /* App01_MiPerfilApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App01_MiPerfilApp.swift; sourceTree = "<group>"; };
-		6DD365FB28A17E3400092EE7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		6DD365FD28A17E3D00092EE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6DD3660028A17E3D00092EE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6DEB99EE28A56BD5001B37FF /* App01-MiPerfil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App01-MiPerfil.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DEB99F128A56BD5001B37FF /* App01_MiPerfilApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App01_MiPerfilApp.swift; sourceTree = "<group>"; };
+		6DEB99F328A56BD5001B37FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6DEB99F528A56BD9001B37FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6DEB99F828A56BD9001B37FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6DD365F328A17E3400092EE7 /* Frameworks */ = {
+		6DEB99EB28A56BD5001B37FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -32,37 +32,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6DD365ED28A17E3300092EE7 = {
+		6DEB99E528A56BD5001B37FF = {
 			isa = PBXGroup;
 			children = (
-				6DD365F828A17E3400092EE7 /* App01-MiPerfil */,
-				6DD365F728A17E3400092EE7 /* Products */,
+				6DEB99F028A56BD5001B37FF /* App01-MiPerfil */,
+				6DEB99EF28A56BD5001B37FF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6DD365F728A17E3400092EE7 /* Products */ = {
+		6DEB99EF28A56BD5001B37FF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6DD365F628A17E3400092EE7 /* App01-MiPerfil.app */,
+				6DEB99EE28A56BD5001B37FF /* App01-MiPerfil.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6DD365F828A17E3400092EE7 /* App01-MiPerfil */ = {
+		6DEB99F028A56BD5001B37FF /* App01-MiPerfil */ = {
 			isa = PBXGroup;
 			children = (
-				6DD365F928A17E3400092EE7 /* App01_MiPerfilApp.swift */,
-				6DD365FB28A17E3400092EE7 /* HomeView.swift */,
-				6DD365FD28A17E3D00092EE7 /* Assets.xcassets */,
-				6DD365FF28A17E3D00092EE7 /* Preview Content */,
+				6DEB99F128A56BD5001B37FF /* App01_MiPerfilApp.swift */,
+				6DEB99F328A56BD5001B37FF /* ContentView.swift */,
+				6DEB99F528A56BD9001B37FF /* Assets.xcassets */,
+				6DEB99F728A56BD9001B37FF /* Preview Content */,
 			);
 			path = "App01-MiPerfil";
 			sourceTree = "<group>";
 		};
-		6DD365FF28A17E3D00092EE7 /* Preview Content */ = {
+		6DEB99F728A56BD9001B37FF /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				6DD3660028A17E3D00092EE7 /* Preview Assets.xcassets */,
+				6DEB99F828A56BD9001B37FF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -70,13 +70,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6DD365F528A17E3400092EE7 /* App01-MiPerfil */ = {
+		6DEB99ED28A56BD5001B37FF /* App01-MiPerfil */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6DD3660428A17E3D00092EE7 /* Build configuration list for PBXNativeTarget "App01-MiPerfil" */;
+			buildConfigurationList = 6DEB99FC28A56BD9001B37FF /* Build configuration list for PBXNativeTarget "App01-MiPerfil" */;
 			buildPhases = (
-				6DD365F228A17E3400092EE7 /* Sources */,
-				6DD365F328A17E3400092EE7 /* Frameworks */,
-				6DD365F428A17E3400092EE7 /* Resources */,
+				6DEB99EA28A56BD5001B37FF /* Sources */,
+				6DEB99EB28A56BD5001B37FF /* Frameworks */,
+				6DEB99EC28A56BD5001B37FF /* Resources */,
 			);
 			buildRules = (
 			);
@@ -84,25 +84,25 @@
 			);
 			name = "App01-MiPerfil";
 			productName = "App01-MiPerfil";
-			productReference = 6DD365F628A17E3400092EE7 /* App01-MiPerfil.app */;
+			productReference = 6DEB99EE28A56BD5001B37FF /* App01-MiPerfil.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6DD365EE28A17E3300092EE7 /* Project object */ = {
+		6DEB99E628A56BD5001B37FF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					6DD365F528A17E3400092EE7 = {
+					6DEB99ED28A56BD5001B37FF = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 6DD365F128A17E3300092EE7 /* Build configuration list for PBXProject "App01-MiPerfil" */;
+			buildConfigurationList = 6DEB99E928A56BD5001B37FF /* Build configuration list for PBXProject "App01-MiPerfil" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,42 +110,42 @@
 				en,
 				Base,
 			);
-			mainGroup = 6DD365ED28A17E3300092EE7;
-			productRefGroup = 6DD365F728A17E3400092EE7 /* Products */;
+			mainGroup = 6DEB99E528A56BD5001B37FF;
+			productRefGroup = 6DEB99EF28A56BD5001B37FF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6DD365F528A17E3400092EE7 /* App01-MiPerfil */,
+				6DEB99ED28A56BD5001B37FF /* App01-MiPerfil */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6DD365F428A17E3400092EE7 /* Resources */ = {
+		6DEB99EC28A56BD5001B37FF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DD3660128A17E3D00092EE7 /* Preview Assets.xcassets in Resources */,
-				6DD365FE28A17E3D00092EE7 /* Assets.xcassets in Resources */,
+				6DEB99F928A56BD9001B37FF /* Preview Assets.xcassets in Resources */,
+				6DEB99F628A56BD9001B37FF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6DD365F228A17E3400092EE7 /* Sources */ = {
+		6DEB99EA28A56BD5001B37FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DD365FC28A17E3400092EE7 /* HomeView.swift in Sources */,
-				6DD365FA28A17E3400092EE7 /* App01_MiPerfilApp.swift in Sources */,
+				6DEB99F428A56BD5001B37FF /* ContentView.swift in Sources */,
+				6DEB99F228A56BD5001B37FF /* App01_MiPerfilApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		6DD3660228A17E3D00092EE7 /* Debug */ = {
+		6DEB99FA28A56BD9001B37FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -205,7 +205,7 @@
 			};
 			name = Debug;
 		};
-		6DD3660328A17E3D00092EE7 /* Release */ = {
+		6DEB99FB28A56BD9001B37FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -259,7 +259,7 @@
 			};
 			name = Release;
 		};
-		6DD3660528A17E3D00092EE7 /* Debug */ = {
+		6DEB99FD28A56BD9001B37FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -288,7 +288,7 @@
 			};
 			name = Debug;
 		};
-		6DD3660628A17E3D00092EE7 /* Release */ = {
+		6DEB99FE28A56BD9001B37FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -320,25 +320,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6DD365F128A17E3300092EE7 /* Build configuration list for PBXProject "App01-MiPerfil" */ = {
+		6DEB99E928A56BD5001B37FF /* Build configuration list for PBXProject "App01-MiPerfil" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6DD3660228A17E3D00092EE7 /* Debug */,
-				6DD3660328A17E3D00092EE7 /* Release */,
+				6DEB99FA28A56BD9001B37FF /* Debug */,
+				6DEB99FB28A56BD9001B37FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6DD3660428A17E3D00092EE7 /* Build configuration list for PBXNativeTarget "App01-MiPerfil" */ = {
+		6DEB99FC28A56BD9001B37FF /* Build configuration list for PBXNativeTarget "App01-MiPerfil" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6DD3660528A17E3D00092EE7 /* Debug */,
-				6DD3660628A17E3D00092EE7 /* Release */,
+				6DEB99FD28A56BD9001B37FF /* Debug */,
+				6DEB99FE28A56BD9001B37FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6DD365EE28A17E3300092EE7 /* Project object */;
+	rootObject = 6DEB99E628A56BD5001B37FF /* Project object */;
 }
