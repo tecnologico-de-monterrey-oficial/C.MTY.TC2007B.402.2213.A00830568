@@ -12,17 +12,16 @@ struct ColorView: View {
     var colour: Colour
     
     var body: some View {
-        ZStack{
+        ZStack {
             colour.colour
-            VStack{
-                if colour.dark{
+            VStack {
+                if colour.dark {
                     Text(colour.name)
                         .foregroundColor(.white)
-                }else{
+                } else {
                     Text(colour.name)
                         .foregroundColor(.black)
                 }
-                
             }
         }
         .navigationTitle(colour.name)

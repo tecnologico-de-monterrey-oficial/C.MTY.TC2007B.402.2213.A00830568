@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NavigationBarModifier: ViewModifier {
-    
+        
     var backgroundColor: UIColor?
     
     
@@ -24,7 +24,7 @@ struct NavigationBarModifier: ViewModifier {
         UINavigationBar.appearance().compactAppearance = coloredAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
         UINavigationBar.appearance().tintColor = fontColor
-        
+
     }
     
     func body(content: Content) -> some View {
@@ -43,9 +43,9 @@ struct NavigationBarModifier: ViewModifier {
 }
 
 extension View {
-    
+ 
     func navigationBarColor(_ backgroundColor: UIColor?, _ fontColor: UIColor?) -> some View {
         self.modifier(NavigationBarModifier(backgroundColor: backgroundColor, fontColor: fontColor))
     }
-    
+
 }

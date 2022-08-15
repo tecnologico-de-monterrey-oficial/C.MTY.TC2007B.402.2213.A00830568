@@ -9,39 +9,43 @@ import SwiftUI
 
 struct ListView: View {
     
-    var colors: [String] = ["Azul", "Blanco", "Naranja", "Rojo", "Celeste", "Verde", "DraculaOrchid"]
+    var colors: [String] = ["Azul", "Blanco", "Naranja", "Rojo", "Celeste", "Verde","DraculaOrchid"]
     
     var body: some View {
-        NavigationView{
-            VStack{
-                List{
-                    Section("American"){
-                        ForEach(Colour.american){ colour in
-                            NavigationLink(destination: ColorView(colour: colour)){
+        NavigationView {
+            VStack {
+                List {
+                    Section("American") {
+                        ForEach(Colour.american) { colour in
+                            NavigationLink {
+                                ColorView(colour: colour)
+                            } label: {
                                 Text(colour.name)
                                     .padding()
                             }
                         }
                     }
-                    Section{
-                        ForEach(Colour.spanish){ colour in
-                            NavigationLink(destination: ColorView(colour: colour)){
-                                HStack{
+                    Section {
+                        ForEach(Colour.spanish) { colour in
+                            NavigationLink {
+                                ColorView(colour: colour)
+                            } label: {
+                                HStack {
                                     Text(colour.name)
                                         .padding()
                                     Text(colour.dark ? "Dark" : "Light")
-                                        .padding()
                                 }
-                                
                             }
                         }
                     } header: {
                         Text("Spanish")
                             .font(.system(.largeTitle))
                     }
-                    Section{
-                        ForEach(Colour.flatUI){ colour in
-                            NavigationLink(destination: ColorView(colour: colour)){
+                    Section {
+                        ForEach(Colour.flatUI) { colour in
+                            NavigationLink {
+                                ColorView(colour: colour)
+                            } label: {
                                 Text(colour.name)
                                     .padding()
                             }
@@ -50,18 +54,21 @@ struct ListView: View {
                         Text("Flat UI")
                             .font(.system(.largeTitle))
                     }
-                    .listStyle(InsetGroupedListStyle())
+
+                    
                 }
-                .navigationTitle("Lista Colores")
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarColor(.white, UIColor(Colour.ElectronBlue.colour))
+                .listStyle(InsetGroupedListStyle())
             }
+            .navigationTitle("Lista Colores")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarColor(.white, UIColor(Colour.ElectronBlue.colour))
         }
+        
     }
-    
-    struct ListView_Previews: PreviewProvider {
-        static var previews: some View {
-            ListView()
-        }
+}
+
+struct ListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ListView()
     }
 }
