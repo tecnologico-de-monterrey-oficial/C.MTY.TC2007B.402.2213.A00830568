@@ -88,7 +88,7 @@ struct HomeView: View {
                     .padding(.bottom, 60)
                 }
             }
-            .sheet(isPresented: $showView){
+            .fullScreenCover(isPresented: $showView){
                 DataView(program: $program, age: $age, dob: $dob, state: $state)
             }
         }

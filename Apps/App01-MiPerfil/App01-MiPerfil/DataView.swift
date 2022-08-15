@@ -9,47 +9,72 @@ import SwiftUI
 
 struct DataView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @Binding var program: String
     @Binding var age: Double
     @Binding var dob: Date
     @Binding var state: String
     
+    @State var backgroundColor: Color = .brown
+    
     let states = ["Aguascalientes","Baja California","Baja California Sur","Campeche","Chiapas","Chihuahua","Coahuila de Zaragoza","Colima","Ciudad de México","Durango","Guanajuato","Guerrero","Hidalgo","Jalisco","Estado de Mexico","Michoacan de Ocampo","Morelos","Nayarit","Nuevo León","Oaxaca","Puebla","Queretaro de Arteaga","Quintana Roo","San Luis Potosi","Sinaloa","Sonora","Tabasco","Tamaulipas","Tlaxcala","Veracruz de Ignacio de la Llave","Yucatan","Zacatecas"]
     
     var body: some View {
         ZStack{
-            Color.brown
+            changeBackgroundColor(age: age)
                 .ignoresSafeArea()
             VStack{
-                Text("Actualiza los datos")
                 HStack{
-                    Text("Carrera:")
-                    TextField("Carrera", text: $program)
-                        //.textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.all, 7)
-                        .background(RoundedRectangle(cornerRadius: 9).fill(Color.white))
-                }
-                HStack{
-                    Text("Edad: \(age, specifier: "%0.0f")")
-                    Slider(value: $age, in: 16...60)
-                }
-                //Text("Fecha de Nacimiento")
-                DatePicker("Fecha de Nacimiento:", selection: $dob, displayedComponents: [.date])
-                HStack{
-                    Text("Estado:")
-                    Spacer()
-                    Picker("Selecciona un estado", selection: $state) {
-                        ForEach(states, id: \.self) {
-                            Text($0)
-                        }
+                    Button("< Regresar") {
+                        presentationMode.wrappedValue.dismiss()
                     }
-                    //.pickerStyle(.menu)
+                    .foregroundColor(Color.white)
+                    Spacer()
                 }
+                Spacer()
+                VStack{
+                    Text("Actualiza los datos")
+                    HStack{
+                        Text("Carrera:")
+                        TextField("Carrera", text: $program)
+                        //.textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.all, 7)
+                            .background(RoundedRectangle(cornerRadius: 9).fill(Color.white))
+                    }
+                    HStack{
+                        Text("Edad: \(age, specifier: "%0.0f")")
+                        Slider(value: $age, in: 16...60)
+                    }
+                    //Text("Fecha de Nacimiento")
+                    DatePicker("Fecha de Nacimiento:", selection: $dob, displayedComponents: [.date])
+                    HStack{
+                        Text("Estado:")
+                        Spacer()
+                        Picker("Selecciona un estado", selection: $state) {
+                            ForEach(states, id: \.self) {
+                                Text($0)
+                            }
+                        }
+                        //.pickerStyle(.menu)
+                    }
+                }
+                Spacer()
             }
             .padding(.horizontal, 30)
         }
         .foregroundColor(.black)
-        //.font(.custom("Roboto-Italic", size: 22))
+        .font(.custom("Roboto-Italic", size: 22))
+    }
+    func changeBackgroundColor(age: Double) -> Color {
+        if age <= 30 {
+            return Color.brown
+        }else {
+            if age >= 45 {
+                return Color.yellow
+            }
+        }
+        return Color.cyan
     }
 }
 
