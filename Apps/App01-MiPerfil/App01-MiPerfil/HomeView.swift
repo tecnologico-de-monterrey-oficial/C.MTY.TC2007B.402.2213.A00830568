@@ -13,7 +13,7 @@ struct HomeView: View {
     @State var program: String = "ITC"
     @State var age: Double = 19
     @State var dob: Date = Date()
-    @State var city: String = "Monterrey"
+    @State var state: String = "Nuevo León"
     @State var showView: Bool = false
     
     var dateFormat: DateFormatter {
@@ -66,7 +66,7 @@ struct HomeView: View {
                             TextView(label: "Carrera: ", value: program)
                             TextView(label: "Edad: ", value: String (format: "%0.f", age))
                             TextView(label: "Fecha de Nacimiento: ", value: "\(dateFormat.string(from: dob))")
-                            TextView(label: "Ciudad: ", value: city)
+                            TextView(label: "Estado: ", value: state)
                         }
                         .modifier(TextModifier())
                         Spacer()
@@ -89,7 +89,7 @@ struct HomeView: View {
                 }
             }
             .sheet(isPresented: $showView){
-                DataView(program: $program, age: $age)
+                DataView(program: $program, age: $age, dob: $dob, state: $state)
             }
         }
         .edgesIgnoringSafeArea(.all)
