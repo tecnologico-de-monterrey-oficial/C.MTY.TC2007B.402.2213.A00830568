@@ -9,22 +9,58 @@ import SwiftUI
 
 struct ListView: View {
     
-    var dogs: [String] = ["Bulldog", "Pastor Alemán", "Labrador Retriever", "Chihuahua", "Pug", "Poodle","Husky Siberiano"]
+    var dogsS: [String] = ["Chihuahua", "Pomerania", "Beagle", "Pug", "Poodle", "Corgi galés de Pembroke"]
+    var dogsM: [String] = ["Appenzell", "Border Collie", "Labrador Retriever", "Cocker", "Bulldog"]
+    var dogsL: [String] = ["San bernardo", "Gran danés", "Terranova", "Lobero irlandés", "Rottweiler"]
     
     var body: some View {
         NavigationView{
             VStack{
                 List{
-                    ForEach(dogs, id: \.self) { dog in
-                        NavigationLink {
-                            DogView(nomImg: dog)
-                        } label: {
-                            Text(dog)
-                                .padding()
+                    Section {
+                        ForEach(dogsS, id: \.self) { dogS in
+                            NavigationLink {
+                                DogView(nomImg: dogS)
+                            } label: {
+                                Text(dogS)
+                                    .padding()
+                            }
                         }
+                    } header: {
+                        Text("Razas pequeñas")
+                            .font(.custom("Rationale-Regular", size: 40))
+                            .padding(.vertical, 10)
+                    }
+                    Section {
+                        ForEach(dogsM, id: \.self) { dogM in
+                            NavigationLink {
+                                DogView(nomImg: dogM)
+                            } label: {
+                                Text(dogM)
+                                    .padding()
+                            }
+                        }
+                    } header: {
+                        Text("Razas medianas")
+                            .font(.custom("Rationale-Regular", size: 40))
+                            .padding(.vertical, 10)
+                    }
+                    Section {
+                        ForEach(dogsL, id: \.self) { dogL in
+                            NavigationLink {
+                                DogView(nomImg: dogL)
+                            } label: {
+                                Text(dogL)
+                                    .padding()
+                            }
+                        }
+                    } header: {
+                        Text("Razas grandes")
+                            .font(.custom("Rationale-Regular", size: 40))
+                            .padding(.vertical, 10)
                     }
                 }
-                .padding(.top, 25)
+                
                 .listStyle(InsetGroupedListStyle())
             }
             .navigationTitle("Razas de perros")

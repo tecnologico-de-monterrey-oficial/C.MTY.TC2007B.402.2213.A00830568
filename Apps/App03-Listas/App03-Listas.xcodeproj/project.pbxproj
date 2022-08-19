@@ -12,6 +12,8 @@
 		6DAE707628AE8408008F21E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DAE707528AE8408008F21E2 /* Assets.xcassets */; };
 		6DAE707928AE8408008F21E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DAE707828AE8408008F21E2 /* Preview Assets.xcassets */; };
 		6DAE708228AE867E008F21E2 /* DogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAE708128AE867E008F21E2 /* DogView.swift */; };
+		6DD874CE28AF4D5800314318 /* AkayaTelivigala-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DD874CD28AF4D5800314318 /* AkayaTelivigala-Regular.ttf */; };
+		6DD874D028AF4DB300314318 /* Rationale-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DD874CF28AF4DB300314318 /* Rationale-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,9 @@
 		6DAE707528AE8408008F21E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DAE707828AE8408008F21E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6DAE708128AE867E008F21E2 /* DogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogView.swift; sourceTree = "<group>"; };
+		6DD874C828AF4B8800314318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6DD874CD28AF4D5800314318 /* AkayaTelivigala-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AkayaTelivigala-Regular.ttf"; sourceTree = "<group>"; };
+		6DD874CF28AF4DB300314318 /* Rationale-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rationale-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +58,8 @@
 		6DAE707028AE83FE008F21E2 /* App03-Listas */ = {
 			isa = PBXGroup;
 			children = (
+				6DD874C828AF4B8800314318 /* Info.plist */,
+				6DD874C528AF4B6A00314318 /* Fonts */,
 				6DAE707128AE83FE008F21E2 /* App03_ListasApp.swift */,
 				6DAE707328AE83FE008F21E2 /* ListView.swift */,
 				6DAE708128AE867E008F21E2 /* DogView.swift */,
@@ -68,6 +75,15 @@
 				6DAE707828AE8408008F21E2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6DD874C528AF4B6A00314318 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6DD874CD28AF4D5800314318 /* AkayaTelivigala-Regular.ttf */,
+				6DD874CF28AF4DB300314318 /* Rationale-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,8 +144,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DD874CE28AF4D5800314318 /* AkayaTelivigala-Regular.ttf in Resources */,
 				6DAE707928AE8408008F21E2 /* Preview Assets.xcassets in Resources */,
 				6DAE707628AE8408008F21E2 /* Assets.xcassets in Resources */,
+				6DD874D028AF4DB300314318 /* Rationale-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +292,7 @@
 				DEVELOPMENT_TEAM = 9QM5ZKR265;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "App03-Listas/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -303,6 +322,7 @@
 				DEVELOPMENT_TEAM = 9QM5ZKR265;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "App03-Listas/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
