@@ -18,7 +18,7 @@ struct SeriesView: View {
                     TabView {
                         ForEach(mediaModel.series) { serie in
                             NavigationLink {
-                                MediaDetailView(media: serie)
+                                MediaDetailView(mediaModel: mediaModel, media: serie)
                             } label: {
                                 MediaRowView(media: serie)
                             }

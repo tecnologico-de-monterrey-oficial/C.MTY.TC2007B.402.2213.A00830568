@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D0521FC28B7F77D00E5AF4B /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0521FB28B7F77D00E5AF4B /* Genre.swift */; };
+		6D0521FE28B800D600E5AF4B /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0521FD28B800D600E5AF4B /* Video.swift */; };
+		6D05220028B8049E00E5AF4B /* VideosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0521FF28B8049E00E5AF4B /* VideosView.swift */; };
 		6D08226128AF127000AB8F42 /* Aboreto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D08225D28AF126F00AB8F42 /* Aboreto-Regular.ttf */; };
 		6D08226228AF127000AB8F42 /* PoiretOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D08225E28AF126F00AB8F42 /* PoiretOne-Regular.ttf */; };
 		6D08226328AF127000AB8F42 /* Silkscreen-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D08225F28AF126F00AB8F42 /* Silkscreen-Regular.ttf */; };
@@ -32,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D0521FB28B7F77D00E5AF4B /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		6D0521FD28B800D600E5AF4B /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		6D0521FF28B8049E00E5AF4B /* VideosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosView.swift; sourceTree = "<group>"; };
 		6D08225D28AF126F00AB8F42 /* Aboreto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aboreto-Regular.ttf"; sourceTree = "<group>"; };
 		6D08225E28AF126F00AB8F42 /* PoiretOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoiretOne-Regular.ttf"; sourceTree = "<group>"; };
 		6D08225F28AF126F00AB8F42 /* Silkscreen-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Regular.ttf"; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 				6D8CAA3528AEA14B00AA0D03 /* MoviesView.swift */,
 				6D8CAA4228AEBD1C00AA0D03 /* MediaRowView.swift */,
 				6D8CAA4428AEBF9300AA0D03 /* MediaDetailView.swift */,
+				6D0521FF28B8049E00E5AF4B /* VideosView.swift */,
 				6D8CAA4A28AECDF300AA0D03 /* WebView.swift */,
 				6D8CAA4628AEC26000AA0D03 /* ScoreView.swift */,
 				6D8CAA3728AEA16300AA0D03 /* SeriesView.swift */,
@@ -132,6 +139,8 @@
 			children = (
 				6D8CAA3C28AEA9F000AA0D03 /* Media.swift */,
 				6D8CAA4028AEAC5200AA0D03 /* MediaModel.swift */,
+				6D0521FB28B7F77D00E5AF4B /* Genre.swift */,
+				6D0521FD28B800D600E5AF4B /* Video.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,10 +235,13 @@
 				6D8CAA3828AEA16300AA0D03 /* SeriesView.swift in Sources */,
 				6D8CAA3D28AEA9F000AA0D03 /* Media.swift in Sources */,
 				6D8CAA4328AEBD1C00AA0D03 /* MediaRowView.swift in Sources */,
+				6D0521FE28B800D600E5AF4B /* Video.swift in Sources */,
 				6D8CAA4128AEAC5200AA0D03 /* MediaModel.swift in Sources */,
 				6D303FA828B3DE53008982A9 /* Constants.swift in Sources */,
 				6D8CAA4728AEC26000AA0D03 /* ScoreView.swift in Sources */,
 				6D8CAA3F28AEAB1600AA0D03 /* Enums.swift in Sources */,
+				6D0521FC28B7F77D00E5AF4B /* Genre.swift in Sources */,
+				6D05220028B8049E00E5AF4B /* VideosView.swift in Sources */,
 				6D8CAA4B28AECDF300AA0D03 /* WebView.swift in Sources */,
 				6D8CAA3628AEA14B00AA0D03 /* MoviesView.swift in Sources */,
 				6D8CAA2828AE9E3D00AA0D03 /* App04_TMDBApp.swift in Sources */,

@@ -40,6 +40,6 @@ struct MediaRowView: View {
 
 struct MediaRowView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaRowView(media: Media(id: 1, title: "", release_date: "", adult: false, genre_ids: [1,2], overview: "", vote_average: 10, poster_path: "", backdrop_path: ""))
+        MediaRowView(media: Media(id: 1, title: "", release_date: "", adult: false, genres: ["", ""], overview: "", vote_average: 10, poster_path: "", backdrop_path: ""))
     }
 }

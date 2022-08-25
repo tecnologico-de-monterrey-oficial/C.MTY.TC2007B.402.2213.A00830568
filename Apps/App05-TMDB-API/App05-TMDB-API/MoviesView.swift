@@ -18,7 +18,7 @@ struct MoviesView: View {
                     TabView {
                         ForEach(mediaModel.movies) { movie in
                             NavigationLink {
-                                MediaDetailView(media: movie)
+                                MediaDetailView(mediaModel: mediaModel, media: movie)
                             } label: {
                                 MediaRowView(media: movie)
                             }
