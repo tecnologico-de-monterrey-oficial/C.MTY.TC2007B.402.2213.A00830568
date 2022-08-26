@@ -16,7 +16,8 @@ struct MediaRowView: View {
         VStack {
             Text(media.title)
                 .foregroundColor(.cyan)
-//            Image(media.poster_path)
+            Text(String(media.release_date.prefix(4)))
+                .foregroundColor(.gray)
             KFImage(URL(string: media.poster_path))
                 .resizable()
                 .scaledToFit()
@@ -32,6 +33,7 @@ struct MediaRowView: View {
                         }
                     }
                 )
+            Spacer()
         }
         .padding(.horizontal, 20)
         .padding(.bottom, 55)

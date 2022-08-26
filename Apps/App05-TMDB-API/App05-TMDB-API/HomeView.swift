@@ -22,7 +22,7 @@ struct HomeView: View {
                     Label("Series", systemImage: "tv.fill")
                 }
         }
-        .accentColor(.red)
+        .accentColor(.purple)
     }
 }
 
