@@ -1,14 +1,14 @@
 //
-//  MovieDetailView.swift
-//  App04-TMDB
+//  TVRowView.swift
+//  App05-TMDB-API
 //
-//  Created by Edgar Alexandro on 18/08/22.
+//  Created by Edgar Alexandro on 29/08/22.
 //
 
 import SwiftUI
 import Kingfisher
 
-struct MediaRowView: View {
+struct TVRowView: View {
     
     var media: Media
     
@@ -40,8 +40,9 @@ struct MediaRowView: View {
     }
 }
 
-struct MediaRowView_Previews: PreviewProvider {
+struct TVRowView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaRowView(media: Media(id: 1, title: "", release_date: "", /*adult: false,*/ genres: ["", ""], overview: "", vote_average: 10, poster_path: "", backdrop_path: ""))
+        TVRowView(media: Media(id: 1, title: "", release_date: "", /*adult: false,*/ genres: ["", ""], overview: "", vote_average: 10, poster_path: "", backdrop_path: ""))
     }
 }
+

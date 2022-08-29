@@ -18,9 +18,9 @@ struct SeriesView: View {
                     TabView {
                         ForEach(mediaModel.series) { serie in
                             NavigationLink {
-                                MediaDetailView(mediaModel: mediaModel, media: serie)
+                                TVDetailView(mediaModel: mediaModel, media: serie)
                             } label: {
-                                MediaRowView(media: serie)
+                                TVRowView(media: serie)
                             }
                             
                             
@@ -31,7 +31,7 @@ struct SeriesView: View {
                     Text("No hay series")
                 }
             }
-            .navigationTitle("Movies")
+            .navigationTitle("Series")
             .navigationBarTitleDisplayMode(.inline)
         }
         

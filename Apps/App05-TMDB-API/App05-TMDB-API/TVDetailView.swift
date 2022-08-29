@@ -1,14 +1,14 @@
 //
-//  MovieDetailView.swift
-//  App04-TMDB
+//  TVDetailView.swift
+//  App05-TMDB-API
 //
-//  Created by Edgar Alexandro on 18/08/22.
+//  Created by Edgar Alexandro on 29/08/22.
 //
 
 import SwiftUI
 import Kingfisher
 
-struct MediaDetailView: View {
+struct TVDetailView: View {
     
     @ObservedObject var mediaModel: MediaModel
     var media: Media
@@ -45,7 +45,7 @@ struct MediaDetailView: View {
                     .multilineTextAlignment(.center)
             }
             NavigationLink {
-                VideosView(mediaModel: mediaModel, mediaID: media.id)
+                TVVideosView(mediaModel: mediaModel, mediaID: media.id)
             } label: {
                 Label("Videos", systemImage: "film.fill")
             }
@@ -55,8 +55,8 @@ struct MediaDetailView: View {
     }
 }
 
-struct MediaDetailView_Previews: PreviewProvider {
+struct TVDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaDetailView(mediaModel: MediaModel(), media: Media(id: 1, title: "", release_date: "", /*adult: false,*/ genres: ["", ""], overview: "", vote_average: 10, poster_path: "", backdrop_path: ""))
+        TVDetailView(mediaModel: MediaModel(), media: Media(id: 1, title: "", release_date: "", /*adult: false,*/ genres: ["", ""], overview: "", vote_average: 10, poster_path: "", backdrop_path: ""))
     }
 }

@@ -12,7 +12,7 @@ struct Media: Identifiable{
     var id: Int
     var title: String
     var release_date: String
-    var adult: Bool
+    //var adult: Bool
     var genres: [String]
     var overview: String
     var vote_average: Double
