@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D05F8FA28D8BD300013E59F /* Enumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05F8F928D8BD300013E59F /* Enumns.swift */; };
+		6D05F8FC28D8D0050013E59F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05F8FB28D8D0050013E59F /* Category.swift */; };
 		6D6CD48928C135B600908BA4 /* App06_Todos_CoreDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6CD48828C135B600908BA4 /* App06_Todos_CoreDataApp.swift */; };
 		6D6CD48B28C135B600908BA4 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6CD48A28C135B600908BA4 /* TaskListView.swift */; };
 		6D6CD48D28C135BE00908BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D6CD48C28C135BE00908BA4 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D05F8F928D8BD300013E59F /* Enumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumns.swift; sourceTree = "<group>"; };
+		6D05F8FB28D8D0050013E59F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		6D6CD48528C135B600908BA4 /* App06-Todos-CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App06-Todos-CoreData.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D6CD48828C135B600908BA4 /* App06_Todos_CoreDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App06_Todos_CoreDataApp.swift; sourceTree = "<group>"; };
 		6D6CD48A28C135B600908BA4 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
@@ -66,8 +70,10 @@
 				6D6CD49F28C13E5F00908BA4 /* Models */,
 				6D6CD48828C135B600908BA4 /* App06_Todos_CoreDataApp.swift */,
 				6D6CD48A28C135B600908BA4 /* TaskListView.swift */,
+				6D05F8F928D8BD300013E59F /* Enumns.swift */,
 				6D6CD4A428C1401100908BA4 /* TaskRowView.swift */,
 				6D6CD4A628C140EB00908BA4 /* TaskDetailView.swift */,
+				6D05F8FB28D8D0050013E59F /* Category.swift */,
 				6D6CD48C28C135BE00908BA4 /* Assets.xcassets */,
 				6D6CD49128C135BE00908BA4 /* Persistence.swift */,
 				6D6CD49328C135BE00908BA4 /* TodosModel.xcdatamodeld */,
@@ -164,12 +170,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D6CD4A728C140EB00908BA4 /* TaskDetailView.swift in Sources */,
+				6D05F8FC28D8D0050013E59F /* Category.swift in Sources */,
 				6D6CD49228C135BE00908BA4 /* Persistence.swift in Sources */,
 				6D6CD4A228C13E7C00908BA4 /* Task+CoreDataClass.swift in Sources */,
 				6D6CD48B28C135B600908BA4 /* TaskListView.swift in Sources */,
 				6D6CD4A528C1401100908BA4 /* TaskRowView.swift in Sources */,
 				6D6CD49528C135BE00908BA4 /* TodosModel.xcdatamodeld in Sources */,
 				6D6CD4A328C13E7C00908BA4 /* Task+CoreDataProperties.swift in Sources */,
+				6D05F8FA28D8BD300013E59F /* Enumns.swift in Sources */,
 				6D6CD48928C135B600908BA4 /* App06_Todos_CoreDataApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TaskRowView: View {
     
-    var task: Task
+    @ObservedObject var task: Task
     
     var body: some View {
         VStack{
