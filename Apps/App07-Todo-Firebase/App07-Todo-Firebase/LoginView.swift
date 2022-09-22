@@ -12,19 +12,20 @@ struct LoginView: View {
     @AppStorage("Page") var currentPage: Page?
     
     var body: some View {
-        VStack{
+        VStack {
             Text("Bienvenido")
-                .padding(.bottom, 40)
                 .font(.largeTitle)
-            Button{
-                currentPage = .login
-            }label: {
+                .padding(.bottom,40)
+            Button {
+                currentPage = .taskList
+            } label: {
                 Text("Login")
             }
             .padding()
             .background(Color.green)
             .foregroundColor(.white)
             .clipShape(Capsule())
+            
         }
     }
 }

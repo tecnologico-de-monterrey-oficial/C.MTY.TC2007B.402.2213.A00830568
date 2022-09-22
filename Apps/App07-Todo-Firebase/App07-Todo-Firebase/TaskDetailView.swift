@@ -10,12 +10,13 @@ import SwiftUI
 struct TaskDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @StateObject var taskModel: TaskModel
     var mode: Mode
     @State var task: Task
     
     var body: some View {
-        VStack{
-            Text(mode == .add ? "Agregar tarea" : "Editar tarea")
+        VStack {
+            Text(mode == .add ? "Agregar Tarea" : "Editar Tarea")
                 .padding(.top, 40)
                 .font(.largeTitle)
             TextField("Tarea", text: $task.task)
@@ -36,22 +37,22 @@ struct TaskDetailView: View {
             .background(Color.green)
             .foregroundColor(.white)
             .clipShape(Capsule())
+            
         }
         .padding(.horizontal, 20)
     }
     
-    func addTask(){
-
+    func addTask() {
+        taskModel.addTask(task: task)
     }
     
-    func editTask(){
-        
+    func editTask() {
+        taskModel.updateTask(task: task)
     }
-    
 }
 
 struct TaskDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskDetailView(mode: .add, task: Task.dummy)
+        TaskDetailView(taskModel: TaskModel(), mode: .add, task: Task.dummy)
     }
 }

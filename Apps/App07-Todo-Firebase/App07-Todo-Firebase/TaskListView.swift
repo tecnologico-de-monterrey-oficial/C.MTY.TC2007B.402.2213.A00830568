@@ -12,22 +12,22 @@ struct TaskListView: View {
     @StateObject var taskModel = TaskModel()
     
     var body: some View {
-        NavigationView{
-            ZStack{
-                List{
-                    ForEach(taskModel.tasks){ task in
-                        NavigationLink{
-                            TaskDetailView(mode: .edit, task: task)
-                        }label:{
+        NavigationView {
+            ZStack {
+                List {
+                    ForEach(taskModel.tasks) { task in
+                        NavigationLink {
+                            TaskDetailView(taskModel: taskModel, mode: .edit, task: task)
+                        } label: {
                             Text(task.task)
                         }
                     }
-                    .onDelete(perform: deleteTask)
+                    .onDelete(perform: deleteTasks)
                 }
-                VStack{
+                VStack {
                     Spacer()
-                    NavigationLink{
-                        TaskDetailView(mode: .add, task: Task.dummy)
+                    NavigationLink {
+                        TaskDetailView(taskModel: taskModel, mode: .add, task: Task.dummy)
                     } label: {
                         Image(systemName: "plus")
                             .font(.largeTitle)
@@ -46,10 +46,11 @@ struct TaskListView: View {
         }
     }
     
-    func deleteTask(offsets: IndexSet){
-        
+    func deleteTasks(offsets: IndexSet) {
+        for index in offsets {
+            taskModel.deleteTask(task: taskModel.tasks[index])
+        }
     }
-    
 }
 
 struct TaskListView_Previews: PreviewProvider {

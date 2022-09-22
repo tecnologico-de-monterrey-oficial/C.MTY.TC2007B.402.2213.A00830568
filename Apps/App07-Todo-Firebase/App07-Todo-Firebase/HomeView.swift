@@ -12,7 +12,7 @@ struct HomeView: View {
     @AppStorage("Page") var currentPage: Page = .login
     
     var body: some View {
-        VStack{
+        VStack {
             switch currentPage {
             case .login:
                 LoginView()
