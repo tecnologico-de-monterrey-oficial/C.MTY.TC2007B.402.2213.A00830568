@@ -8,15 +8,48 @@
 import SwiftUI
 
 struct TaskListView: View {
+    
+    @StateObject var taskModel = TaskModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView{
+            ZStack{
+                List{
+                    ForEach(taskModel.tasks){ task in
+                        NavigationLink{
+                            TaskDetailView(mode: .edit, task: task)
+                        }label:{
+                            Text(task.task)
+                        }
+                    }
+                    .onDelete(perform: deleteTask)
+                }
+                VStack{
+                    Spacer()
+                    NavigationLink{
+                        TaskDetailView(mode: .add, task: Task.dummy)
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.largeTitle)
+                    }
+                    .padding()
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .clipShape(Circle())
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                }
+            }
         }
-        .padding()
     }
+    
+    func deleteTask(offsets: IndexSet){
+        
+    }
+    
 }
 
 struct TaskListView_Previews: PreviewProvider {

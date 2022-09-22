@@ -22,7 +22,7 @@ struct App07_Todo_FirebaseApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            TaskListView()
+            HomeView()
         }
     }
 }
