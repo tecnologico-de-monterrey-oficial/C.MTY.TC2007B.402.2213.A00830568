@@ -32,6 +32,21 @@ extension Task {
         category ?? ""
     }
     
+    var priority_wrapped: Int16{
+        priority 
+    }
+    
+    var due_date_wrapped: Date{
+        due_date ?? Date()
+    }
+    
+    var date_created_wrapped: Date{
+        date_created ?? Date()
+    }
+    
+    var completed_wrapped: Bool{
+        completed
+    }
 }
 
 extension Task : Identifiable {

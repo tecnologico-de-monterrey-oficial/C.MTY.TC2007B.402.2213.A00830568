@@ -12,7 +12,7 @@ struct TaskListView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Task.priority, ascending: false)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Task.priority, ascending: true)],
         animation: .default)
     private var tasks: FetchedResults<Task>
     

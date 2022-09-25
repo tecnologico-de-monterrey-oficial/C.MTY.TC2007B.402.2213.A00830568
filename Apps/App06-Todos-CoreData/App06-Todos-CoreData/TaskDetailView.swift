@@ -14,9 +14,15 @@ struct TaskDetailView: View {
     
     var mode: Mode = .add
     var task: Task
+    var prioridades = [1, 2, 3]
+    
     @State var taskEdit: String = ""
     @State var categoryEdit: String = "Fun"
     @State var categoryIndex = 0
+    @State var priorityEdit: Int16 = 1
+    @State var due_dateEdit: Date = Date()
+    @State var date_createdEdit: Date = Date()
+    @State var completedEdit: Bool = false
     
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -33,42 +39,55 @@ struct TaskDetailView: View {
                 TextField("Tarea", text: $taskEdit)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .font(.system(.title))
-            }
+            }.padding()
             VStack{
                 Text("Categoría")
-                Text(categoryEdit)
                     .font(.system(.title))
-            }
-            HStack{
-                ForEach(Category.categories){ category in
-                    Image(category.image)
-                        .resizable()
-                        .frame(width: 60, height: 60)
-                        .padding(.horizontal, 10)
-                        .opacity(categoryEdit == category.category ? 1.0 : 0.3)
-                        .onTapGesture {
-                            categoryEdit = category.category
-                        }
+                Text(categoryEdit)
+                
+                HStack{
+                    ForEach(Category.categories){ category in
+                        Image(category.image)
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .padding(.horizontal, 10)
+                            .opacity(categoryEdit == category.category ? 1.0 : 0.3)
+                            .onTapGesture {
+                                categoryEdit = category.category
+                            }
+                    }
                 }
-            }
-            //            HStack {
-            //                Text("Priority:")
-            //                Text("\(task!.priority)")
-            //            }
-            //            HStack {
-            //                Text("Category:")
-            //                Text("\(task!.category_wrapped)")
-            //            }
-            //            HStack {
-            //                Text("Task:")
-            //                Text("\(task!.task_wrapped)")
-            //            }
-            //            if task!.due_date != nil {
-            //                HStack {
-            //                    Text("Due Date:")
-            //                    Text("\(dateFormatter.string(from: task!.due_date!))")
-            //                }
-            //            }
+            }.padding()
+            VStack{
+                Text("Prioridad \(priorityEdit)")
+                    .font(.system(.title))
+                
+                HStack {
+                    ForEach(prioridades, id: \.self){ prioridad in
+                        Text("\(prioridad)")
+                            .opacity(priorityEdit == prioridad ? 1.0 : 0.3)
+                            .onTapGesture {
+                                priorityEdit = Int16(prioridad)
+                            }
+                    }
+                }
+            }.padding()
+            VStack{
+                Text("Fecha de entrega")
+                    .font(.system(.title))
+                Text(due_dateEdit, format: .dateTime.day().month().year())
+                DatePicker("Selecciona una fecha", selection: $due_dateEdit, displayedComponents: [.date])
+            }.padding()
+            VStack{
+                Text("Fecha de creación")
+                    .font(.system(.title))
+                Text(date_createdEdit, format: .dateTime.day().month().year())
+            }.padding()
+            Text(completedEdit == false ? "Terminado" : "No terminado")
+                .onTapGesture {
+                    completedEdit = !completedEdit
+                }
+                .padding()
             Spacer()
             Button {
                 if mode == .add {
@@ -92,10 +111,18 @@ struct TaskDetailView: View {
             if mode == .edit {
                 taskEdit = task.task_wrapped
                 categoryEdit = task.category_wrapped
+                priorityEdit = task.priority_wrapped
+                due_dateEdit = task.due_date_wrapped
+                date_createdEdit = task.date_created_wrapped
+                completedEdit = task.completed_wrapped
             }
             else{
                 taskEdit = ""
                 categoryEdit = "Fun"
+                priorityEdit = 1
+                due_dateEdit = Date.now.addingTimeInterval(86400)
+                date_createdEdit = Date.now
+                completedEdit = false
             }
         }
     }
@@ -105,9 +132,10 @@ struct TaskDetailView: View {
             let newTask = Task(context: viewContext)
             newTask.id = UUID()
             newTask.task = taskEdit
-            newTask.priority = 1
+            newTask.priority = priorityEdit
             newTask.category = categoryEdit
-            newTask.due_date = Date()
+            newTask.due_date = due_dateEdit
+            newTask.date_created = date_createdEdit
             newTask.completed = false
             
             do {
@@ -124,14 +152,12 @@ struct TaskDetailView: View {
     private func editTask() {
         withAnimation {
             viewContext.performAndWait {
-                
                 task.task = taskEdit
                 task.category = categoryEdit
-                //            newTask.priority = 1
-                //            newTask.category = "Clase"
-                //            newTask.due_date = Date()
-                //            newTask.completed = false
-                
+                task.priority = priorityEdit
+                task.due_date = due_dateEdit
+                task.date_created = date_createdEdit
+                task.completed = completedEdit
                 do {
                     try viewContext.save()
                 } catch {
@@ -143,7 +169,6 @@ struct TaskDetailView: View {
             }
         }
     }
-    
 }
 
 struct TaskDetailView_Previews: PreviewProvider {

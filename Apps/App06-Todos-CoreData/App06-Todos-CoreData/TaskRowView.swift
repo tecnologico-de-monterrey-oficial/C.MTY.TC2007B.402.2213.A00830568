@@ -17,7 +17,9 @@ struct TaskRowView: View {
                 Text("\(task.priority)")
                     .padding()
                 Text(task.task_wrapped)
+                    .strikethrough(task.completed)
             }
+            .opacity(task.completed == false ? 1.0 : 0.3)
         }
     }
 }
