@@ -18,7 +18,8 @@ struct TaskListView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
+            VStack {
+                Spacer()
                 List {
                     ForEach(tasks) { task in
                         NavigationLink {
@@ -30,7 +31,6 @@ struct TaskListView: View {
                     .onDelete(perform: deleteTasks)
                 }
                 VStack {
-                    Spacer()
                     NavigationLink {
                         TaskDetailView(mode: .add, task: Task())
                     } label: {
@@ -42,14 +42,16 @@ struct TaskListView: View {
                     .foregroundColor(.white)
                     .clipShape(Circle())
                 }
-                .padding(.bottom, 60)
+//                .padding(.bottom, 60)
                 
             }
+            .background(Color("ColorLista"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
             }
+            .navigationBarTitle("Lista de tareas", displayMode: .large)
         }
     }
     

@@ -34,7 +34,7 @@ struct TaskDetailView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Task")
+                Text("Nombre")
                     .font(.system(.largeTitle))
                 TextField("Tarea", text: $taskEdit)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -57,7 +57,7 @@ struct TaskDetailView: View {
                             }
                     }
                 }
-            }.padding()
+            }.padding([.bottom, .trailing, .leading])
             VStack{
                 Text("Prioridad \(priorityEdit)")
                     .font(.system(.title))
@@ -65,29 +65,45 @@ struct TaskDetailView: View {
                 HStack {
                     ForEach(prioridades, id: \.self){ prioridad in
                         Text("\(prioridad)")
+                            .font(.system(size: 25))
                             .opacity(priorityEdit == prioridad ? 1.0 : 0.3)
                             .onTapGesture {
                                 priorityEdit = Int16(prioridad)
                             }
                     }
                 }
-            }.padding()
+            }.padding([.bottom, .trailing, .leading])
             VStack{
                 Text("Fecha de entrega")
                     .font(.system(.title))
                 Text(due_dateEdit, format: .dateTime.day().month().year())
+                    .font(.system(size: 25))
                 DatePicker("Selecciona una fecha", selection: $due_dateEdit, displayedComponents: [.date])
-            }.padding()
+                    .font(.system(size: 20))
+            }.padding([.bottom, .trailing, .leading])
             VStack{
                 Text("Fecha de creación")
                     .font(.system(.title))
                 Text(date_createdEdit, format: .dateTime.day().month().year())
-            }.padding()
-            Text(completedEdit == false ? "Terminado" : "No terminado")
-                .onTapGesture {
-                    completedEdit = !completedEdit
-                }
-                .padding()
+                    .font(.system(size: 25))
+            }.padding([.bottom, .trailing, .leading])
+            HStack{
+                Spacer()
+                Text("Terminado")
+                    .opacity(completedEdit == true ? 1.0 : 0.5)
+                    .onTapGesture {
+                        completedEdit = true
+                    }
+                    .foregroundColor(.green)
+                Spacer()
+                Text("No terminado")
+                    .opacity(completedEdit == false ? 1.0 : 0.5)
+                    .onTapGesture {
+                        completedEdit = false
+                    }
+                    .foregroundColor(.red)
+                Spacer()
+            }.padding([.bottom, .trailing, .leading])
             Spacer()
             Button {
                 if mode == .add {
@@ -136,7 +152,7 @@ struct TaskDetailView: View {
             newTask.category = categoryEdit
             newTask.due_date = due_dateEdit
             newTask.date_created = date_createdEdit
-            newTask.completed = false
+            newTask.completed = completedEdit
             
             do {
                 try viewContext.save()
