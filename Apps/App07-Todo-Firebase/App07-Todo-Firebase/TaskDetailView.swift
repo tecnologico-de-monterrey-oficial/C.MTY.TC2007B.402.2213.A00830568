@@ -16,96 +16,95 @@ struct TaskDetailView: View {
     @State var task: Task
     
     var body: some View {
-        VStack {
-            VStack{
-                Text(mode == .add ? "Agregar \(task.task)" : "Editar \(task.task)")
-                    .padding(.top, 40)
-                    .font(.largeTitle)
-                TextField("Tarea", text: $task.task)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }.padding()
-            VStack{
-                Text("Categoría")
-                    .font(.system(.title))
-                Text(task.category)
+        ScrollView{
+            VStack {
+                VStack{
+                    Text(mode == .add ? "Agregar \(task.task)" : "Editar \(task.task)")
+                        .font(.largeTitle)
+                    TextField("Tarea", text: $task.task)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }.padding([.bottom, .trailing, .leading])
+                VStack{
+                    Text("Categoría")
+                        .font(.system(.title))
+                    Text(task.category)
+                    HStack{
+                        ForEach(Category.categories){ category in
+                            Image(category.image)
+                                .resizable()
+                                .frame(width: 60, height: 60)
+                                .padding(.horizontal, 10)
+                                .opacity(task.category == category.category ? 1.0 : 0.3)
+                                .onTapGesture {
+                                    task.category = category.category
+                                }
+                        }
+                    }
+                }.padding([.bottom, .trailing, .leading])
+                VStack{
+                    Text("Prioridad \(task.priority)")
+                        .font(.system(.title))
+                    HStack {
+                        ForEach(prioridades, id: \.self){ prioridad in
+                            Text("\(prioridad)")
+                                .font(.system(size: 25))
+                                .opacity(task.priority == prioridad ? 1.0 : 0.3)
+                                .onTapGesture {
+                                    task.priority = prioridad
+                                }
+                        }
+                    }
+                }.padding([.bottom, .trailing, .leading])
+                VStack{
+                    Text("Fecha de entrega")
+                        .font(.system(.title))
+                    Text(task.due_date, format: .dateTime.day().month().year())
+                        .font(.system(size: 25))
+                    DatePicker("Selecciona una fecha", selection: $task.due_date, displayedComponents: [.date])
+                        .font(.system(size: 20))
+                }.padding([.bottom, .trailing, .leading])
+                VStack{
+                    Text("Fecha de creación")
+                        .font(.system(.title))
+                    Text(task.date_created, format: .dateTime.day().month().year())
+                        .font(.system(size: 25))
+                }.padding([.bottom, .trailing, .leading])
                 HStack{
-                    ForEach(Category.categories){ category in
-                        Image(category.image)
-                            .resizable()
-                            .frame(width: 60, height: 60)
-                            .padding(.horizontal, 10)
-                            .opacity(task.category == category.category ? 1.0 : 0.3)
-                            .onTapGesture {
-                                task.category = category.category
-                            }
+                    Spacer()
+                    Text("Terminado")
+                        .opacity(task.completed == true ? 1.0 : 0.5)
+                        .onTapGesture {
+                            task.completed = true
+                        }
+                        .foregroundColor(.green)
+                    Spacer()
+                    Text("No terminado")
+                        .opacity(task.completed == false ? 1.0 : 0.5)
+                        .onTapGesture {
+                            task.completed = false
+                        }
+                        .foregroundColor(.red)
+                    Spacer()
+                }.padding([.bottom, .trailing, .leading])
+                Button {
+                    if mode == .add {
+                        addTask()
+                    } else {
+                        editTask()
                     }
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text(mode == .add ? "Agregar" : "Editar")
+                        .font(.system(.largeTitle))
                 }
-            }.padding([.bottom, .trailing, .leading])
-            VStack{
-                Text("Prioridad \(task.priority)")
-                    .font(.system(.title))
+                .padding()
+                .background(Color.green)
+                .foregroundColor(.white)
+                .clipShape(Capsule())
                 
-                HStack {
-                    ForEach(prioridades, id: \.self){ prioridad in
-                        Text("\(prioridad)")
-                            .font(.system(size: 25))
-                            .opacity(task.priority == prioridad ? 1.0 : 0.3)
-                            .onTapGesture {
-                                task.priority = prioridad
-                            }
-                    }
-                }
-            }.padding([.bottom, .trailing, .leading])
-            VStack{
-                Text("Fecha de entrega")
-                    .font(.system(.title))
-                Text(task.due_date, format: .dateTime.day().month().year())
-                    .font(.system(size: 25))
-                DatePicker("Selecciona una fecha", selection: $task.due_date, displayedComponents: [.date])
-                    .font(.system(size: 20))
-            }.padding([.bottom, .trailing, .leading])
-            VStack{
-                Text("Fecha de creación")
-                    .font(.system(.title))
-                Text(task.date_created, format: .dateTime.day().month().year())
-                    .font(.system(size: 25))
-            }.padding([.bottom, .trailing, .leading])
-            HStack{
-                Spacer()
-                Text("Terminado")
-                    .opacity(task.completed == true ? 1.0 : 0.5)
-                    .onTapGesture {
-                        task.completed = true
-                    }
-                    .foregroundColor(.green)
-                Spacer()
-                Text("No terminado")
-                    .opacity(task.completed == false ? 1.0 : 0.5)
-                    .onTapGesture {
-                        task.completed = false
-                    }
-                    .foregroundColor(.red)
-                Spacer()
-            }.padding([.bottom, .trailing, .leading])
-            Spacer()
-            Button {
-                if mode == .add {
-                    addTask()
-                } else {
-                    editTask()
-                }
-                presentationMode.wrappedValue.dismiss()
-            } label: {
-                Text(mode == .add ? "Agregar" : "Editar")
-                    .font(.system(.largeTitle))
             }
-            .padding()
-            .background(Color.green)
-            .foregroundColor(.white)
-            .clipShape(Capsule())
-            
+            .padding([.bottom, .trailing, .leading])
         }
-        .padding(.bottom, 20)
     }
     
     func addTask() {
