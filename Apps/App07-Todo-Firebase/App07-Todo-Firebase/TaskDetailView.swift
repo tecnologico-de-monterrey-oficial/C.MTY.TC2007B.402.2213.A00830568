@@ -21,7 +21,23 @@ struct TaskDetailView: View {
                 .font(.largeTitle)
             TextField("Tarea", text: $task.task)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            Spacer()
+            VStack{
+                Text("Categoría")
+                    .font(.system(.title))
+                Text(task.category)
+                HStack{
+                    ForEach(Category.categories){ category in
+                        Image(category.image)
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .padding(.horizontal, 10)
+                            .opacity(task.category == category.category ? 1.0 : 0.3)
+                            .onTapGesture {
+                                task.category = category.category
+                            }
+                    }
+                }
+            }.padding([.bottom, .trailing, .leading])
             Button {
                 if mode == .add {
                     addTask()
