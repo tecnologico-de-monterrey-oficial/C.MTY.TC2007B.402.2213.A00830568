@@ -8,11 +8,9 @@
 import Foundation
 
 struct Category: Identifiable{
-    
     var id: Int
     var category: String
     var image: String
-    
 }
 
 extension Category {

@@ -18,7 +18,7 @@ struct TaskDetailView: View {
     var body: some View {
         VStack {
             VStack{
-                Text(mode == .add ? "Agregar Tarea" : "Editar Tarea")
+                Text(mode == .add ? "Agregar \(task.task)" : "Editar \(task.task)")
                     .padding(.top, 40)
                     .font(.largeTitle)
                 TextField("Tarea", text: $task.task)
@@ -105,7 +105,7 @@ struct TaskDetailView: View {
             .clipShape(Capsule())
             
         }
-        .padding(.bottom, 100)
+        .padding(.bottom, 20)
     }
     
     func addTask() {

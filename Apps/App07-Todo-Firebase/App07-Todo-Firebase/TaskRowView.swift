@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct TaskRowView: View {
-    
     var task: Task
-    
     var body: some View {
         VStack{
             HStack{

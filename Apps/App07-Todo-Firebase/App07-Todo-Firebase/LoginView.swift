@@ -25,7 +25,6 @@ struct LoginView: View {
             .background(Color.green)
             .foregroundColor(.white)
             .clipShape(Capsule())
-            
         }
     }
 }
