@@ -13,19 +13,21 @@ struct TaskListView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
+            VStack {
+                Spacer()
                 List {
                     ForEach(taskModel.tasks) { task in
                         NavigationLink {
                             TaskDetailView(taskModel: taskModel, mode: .edit, task: task)
                         } label: {
-                            Text(task.task)
+//                            Text(task.task)
+                            TaskRowView(task: task)
                         }
                     }
                     .onDelete(perform: deleteTasks)
                 }
                 VStack {
-                    Spacer()
+//                    Spacer()
                     NavigationLink {
                         TaskDetailView(taskModel: taskModel, mode: .add, task: Task.dummy)
                     } label: {
@@ -38,11 +40,13 @@ struct TaskListView: View {
                     .clipShape(Circle())
                 }
             }
+            .background(Color("ColorLista"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
             }
+            .navigationBarTitle("Lista de tareas", displayMode: .large)
         }
     }
     

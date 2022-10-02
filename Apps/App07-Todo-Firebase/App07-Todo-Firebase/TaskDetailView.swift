@@ -12,15 +12,18 @@ struct TaskDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var taskModel: TaskModel
     var mode: Mode
+    var prioridades = [1, 2, 3]
     @State var task: Task
     
     var body: some View {
         VStack {
-            Text(mode == .add ? "Agregar Tarea" : "Editar Tarea")
-                .padding(.top, 40)
-                .font(.largeTitle)
-            TextField("Tarea", text: $task.task)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+            VStack{
+                Text(mode == .add ? "Agregar Tarea" : "Editar Tarea")
+                    .padding(.top, 40)
+                    .font(.largeTitle)
+                TextField("Tarea", text: $task.task)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }.padding()
             VStack{
                 Text("Categoría")
                     .font(.system(.title))
@@ -38,6 +41,53 @@ struct TaskDetailView: View {
                     }
                 }
             }.padding([.bottom, .trailing, .leading])
+            VStack{
+                Text("Prioridad \(task.priority)")
+                    .font(.system(.title))
+                
+                HStack {
+                    ForEach(prioridades, id: \.self){ prioridad in
+                        Text("\(prioridad)")
+                            .font(.system(size: 25))
+                            .opacity(task.priority == prioridad ? 1.0 : 0.3)
+                            .onTapGesture {
+                                task.priority = prioridad
+                            }
+                    }
+                }
+            }.padding([.bottom, .trailing, .leading])
+            VStack{
+                Text("Fecha de entrega")
+                    .font(.system(.title))
+                Text(task.due_date, format: .dateTime.day().month().year())
+                    .font(.system(size: 25))
+                DatePicker("Selecciona una fecha", selection: $task.due_date, displayedComponents: [.date])
+                    .font(.system(size: 20))
+            }.padding([.bottom, .trailing, .leading])
+            VStack{
+                Text("Fecha de creación")
+                    .font(.system(.title))
+                Text(task.date_created, format: .dateTime.day().month().year())
+                    .font(.system(size: 25))
+            }.padding([.bottom, .trailing, .leading])
+            HStack{
+                Spacer()
+                Text("Terminado")
+                    .opacity(task.completed == true ? 1.0 : 0.5)
+                    .onTapGesture {
+                        task.completed = true
+                    }
+                    .foregroundColor(.green)
+                Spacer()
+                Text("No terminado")
+                    .opacity(task.completed == false ? 1.0 : 0.5)
+                    .onTapGesture {
+                        task.completed = false
+                    }
+                    .foregroundColor(.red)
+                Spacer()
+            }.padding([.bottom, .trailing, .leading])
+            Spacer()
             Button {
                 if mode == .add {
                     addTask()
@@ -55,7 +105,7 @@ struct TaskDetailView: View {
             .clipShape(Capsule())
             
         }
-        .padding(.horizontal, 20)
+        .padding(.bottom, 100)
     }
     
     func addTask() {

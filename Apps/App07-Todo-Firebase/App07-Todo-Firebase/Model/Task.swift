@@ -27,12 +27,9 @@ struct Task: Identifiable, Codable {
         case completed
         case date_created
         case due_date
-        
     }
-    
 }
 
 extension Task {
-    
     static let dummy = Task(task: "", category: "fun", priority: 1, completed: false, date_created: Date(), due_date: Date())
 }
