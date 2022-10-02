@@ -12,7 +12,7 @@ struct TaskRowView: View {
     var body: some View {
         VStack{
             HStack{
-                Text("\(task.priority)")
+                Text(task.due_date, format: .dateTime.day().month().year())
                     .padding()
                 Text(task.task)
                     .strikethrough(task.completed)
